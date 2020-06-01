@@ -1,0 +1,45 @@
+Script iniciado (vie 22 may 2020 22:34:42 -03
+)find: ‘./Descargas’: No existe el fichero o el directorio
+kill: uso: kill [-s id_señal | -n num_señal | -id_señal] pid | idtrabajo ... ó kill -l [id_señal]
+kill: uso: kill [-s id_señal | -n num_señal | -id_señal] pid | idtrabajo ... ó kill -l [id_señal]
+kill: uso: kill [-s id_señal | -n num_señal | -id_señal] pid | idtrabajo ... ó kill -l [id_señal]
+kill: uso: kill [-s id_señal | -n num_señal | -id_señal] pid | idtrabajo ... ó kill -l [id_señal]
+nico@debianThinkpadx230:~/_org/catedraEaIII/guiaEjercicios/Unidad_1/2020/residuosPonderados/tanqueCombus/MRP$ git add MRPauto.m 
+nico@debianThinkpadx230:~/_org/catedraEaIII/guiaEjercicios/Unidad_1/2020/residuosPonderados/tanqueCombus/MRP$ git push or[K[Khttps://www.githu b.com/ea3-utn/MRP
+Username for 'https://github.com': ^C
+nico@debianThinkpadx230:~/_org/catedraEaIII/guiaEjercicios/Unidad_1/2020/residuosPonderados/tanqueCombus/MRP$ ^C
+nico@debianThinkpadx230:~/_org/catedraEaIII/guiaEjercicios/Unidad_1/2020/residuosPonderados/tanqueCombus/MRP$ git commit -m ""f"u"[1P"[1P"f"u"n"c"i"[1P"[1P"[1P"[1P"[1P"d"u"o"[1P"[1P"o"u"b"l"e" "C"="i" [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn""v"K"[1P"(")"K)"
+[master 6139a15] double C=inv(K)
+ Committer: nico <nico@debianThinkpadx230.debianThinkpadx230>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+nico@debianThinkpadx230:~/_org/catedraEaIII/guiaEjercicios/Unidad_1/2020/residuosPonderados/tanqueCombus/MRP$ git commit -m "double C=invv(K)"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush https://www.github.com/ea3-utn/MRP
+Username for 'https://github.com': ea3-utn
+Password for 'https://ea3-utn@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/ea3-utn/MRP.git/'
+nico@debianThinkpadx230:~/_org/catedraEaIII/guiaEjercicios/Unidad_1/2020/residuosPonderados/tanqueCombus/MRP$ git push https://www.githubb.com/ea3-utn/MRP
+Username for 'https://github.com': ea3-utn
+Password for 'https://ea3-utn@github.com': 
+warning: redirecting to https://github.com/ea3-utn/MRP.git/
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 484 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://www.github.com/ea3-utn/MRP
+   39c4d17..6139a15  master -> master
+nico@debianThinkpadx230:~/_org/catedraEaIII/guiaEjercicios/Unidad_1/2020/residuosPonderados/tanqueCombus/MRP$ cd [K[K[Kcd ..
+nico
