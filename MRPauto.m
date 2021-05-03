@@ -65,7 +65,7 @@ fx=-4;
 
 ##//////// CONFIGURACION //////////////////////////////
 
-gl=2 ;# Grados de libertad iniciales O subdominios
+gl=1 ;# Grados de libertad iniciales O subdominios
 
 gli=gl;
 
@@ -79,14 +79,11 @@ CONVG=0;
 
 N=sym(ones(1,1));
 
-abscisas=linspace(xInicial,xFinal,10);
+abscisas=linspace(xInicial,xFinal,50);
 
 #############################################################
 ######### PUNTOS #######################################
 #############################################################
-
-
-
 
 figure(1);clf;
 
@@ -101,8 +98,16 @@ title ('COLOCACION POR PUNTOS')
 while (CONVG<=0 && gl<=maxIteraciones)
 
 ######### GRADOS DE LIBERTAD ##################
+  
+  if (gl==1)
 
-  GL=linspace(xInicial,xFinal,gl);
+    GL=(max(abscisas)-min(abscisas))/2+min(abscisas);
+
+  else
+    
+    GL=linspace(xInicial,xFinal,gl);
+
+  endif
   
   N=forN(gl);
     
@@ -136,21 +141,24 @@ while (CONVG<=0 && gl<=maxIteraciones)
 
     
   fp=function_handle(N*C+psi);
+
+  Norma=function_handle(abs(N*C+psi));
   
-  AreaActual=trapz(abscisas,fp(abscisas));
+  AreaActual=trapz(abscisas,Norma(abscisas));
 
   try
   
-    AreaPrevia=trapz(abscisas,puntos);
+    AreaPrevia=trapz(abscisas,NormaPrevia);
 
   catch
 
     AreaPrevia=2*AreaActual;
 
   end_try_catch
+
+  NormaPrevia=Norma(abscisas);
   
   Error=abs((AreaPrevia-AreaActual)/AreaPrevia)*100;
-
   
   if  (Error<=CRITERIO || gl>=maxIteraciones)
 
@@ -159,6 +167,8 @@ while (CONVG<=0 && gl<=maxIteraciones)
   endif
   
   puntos=fp(abscisas);
+
+  
 
   plot(abscisas,puntos,["--" markStyle(gl) color(gl) ";GL= " num2str(gl) ";"]);
     
@@ -174,7 +184,7 @@ printf("\n\n\n COLOCACION POR PUNTOS %d GL -->  ERROR RELATIVO= %d%%\n",(gl-1),E
 
 puntosSymbolico=N*C+psi
 
-clear K Fpsi F;
+clear K Fpsi F NormaPrevia;
 
 N=sym(ones(1,1));
 
@@ -241,18 +251,22 @@ while (CONVG<=0 && gl<=maxIteraciones)
 
   
   fp=function_handle(N*C+psi);
+
+  Norma=function_handle(abs(N*C+psi));
   
-  AreaActual=trapz(abscisas,fp(abscisas));
+  AreaActual=trapz(abscisas,Norma(abscisas));
 
   try
   
-    AreaPrevia=trapz(abscisas,subdominios);
+    AreaPrevia=trapz(abscisas,NormaPrevia);
 
   catch
 
     AreaPrevia=2*AreaActual;
 
   end_try_catch
+
+  NormaPrevia=Norma(abscisas);
   
   Error=abs((AreaPrevia-AreaActual)/AreaPrevia)*100;
   
@@ -280,7 +294,7 @@ printf("\n\n\n COLOCACION POR SUBDOMINIOS %d GL -->  ERROR RELATIVO= %d%%\n",(gl
 
 subdominiosSymbolico=N*C+psi
 
-clear K Fpsi F;
+clear K Fpsi F NormaPrevia;
 
 N=sym(ones(1,1));
 
@@ -334,18 +348,22 @@ while (CONVG<=0 && gl<=maxIteraciones)
 ######### PLOTEO #########################################
 
   fp=function_handle(N*C+psi);
+
+  Norma=function_handle(abs(N*C+psi));
   
-  AreaActual=trapz(abscisas,fp(abscisas));
+  AreaActual=trapz(abscisas,Norma(abscisas));
 
   try
   
-    AreaPrevia=trapz(abscisas,galerkin);
+    AreaPrevia=trapz(abscisas,NormaPrevia);
 
   catch
 
     AreaPrevia=2*AreaActual;
 
   end_try_catch
+
+  NormaPrevia=Norma(abscisas);
   
   Error=abs((AreaPrevia-AreaActual)/AreaPrevia)*100;
   
@@ -373,7 +391,7 @@ hold off;
 
 printf("\n\n\n GALERKIN %d GL -->  ERROR RELATIVO= %d%%\n",(gl-1),Error);
 
-
+clear NormaPrevia
 
 galerkinSymbolico=RESULTADO
 
@@ -428,18 +446,22 @@ while (CONVG<=0 && gl<=maxIteraciones)
 ######### PLOTEO #########################################
 
   fp=function_handle(N*C+psi);
+   
+  Norma=function_handle(abs(N*C+psi));
   
-  AreaActual=trapz(abscisas,fp(abscisas));
+  AreaActual=trapz(abscisas,Norma(abscisas));
 
   try
   
-    AreaPrevia=trapz(abscisas,cuadrados);
+    AreaPrevia=trapz(abscisas,NormaPrevia);
 
   catch
 
     AreaPrevia=2*AreaActual;
 
   end_try_catch
+
+  NormaPrevia=Norma(abscisas);
   
   Error=abs((AreaPrevia-AreaActual)/AreaPrevia)*100;
   
